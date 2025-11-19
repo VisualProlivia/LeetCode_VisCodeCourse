@@ -1,0 +1,24 @@
+public class Solution {
+    public int[] TwoSum(int[] nums, int target) 
+    {
+        // Increment [x,0] for loop
+        for (int x = 0; x < nums.Count()-1; x++)
+        {
+            int first = nums[x];
+            // Increment [0,x] for loop
+            for (int i = x+1; i < nums.Count(); i++)
+            {
+                int second = nums[i];
+                int thing = first + second;
+
+                // Check if these two add up to target
+                if (thing == target)
+                {
+                    return [x, i];
+                }
+            }
+        }
+        // If nothing works
+        return [0,0];
+    }
+}
